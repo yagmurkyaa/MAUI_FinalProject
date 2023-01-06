@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="_180201028_yagmurkaya_cproject.MovieActorPage"
+            Title="Movie and Actor's List" Appearing="ContentPage_Appearing"
+             BackgroundColor="LightGray">
+    <StackLayout Orientation="Vertical">
+
+        <ListView x:Name="MovieList" ItemTapped="MovieList_ItemTapped" HasUnevenRows="True">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="{Binding MovieID}" Margin="10"/>
+                            <Label Text="{Binding MovieName}" Margin="10"/>
+                            <Label Text="{Binding MovieRunTime}" Margin="10"/>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <ListView x:Name="ActorList" ItemTapped="ActorList_ItemTapped" HasUnevenRows="True">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="{Binding ActorID}" Margin="10"/>
+                            <Label Text="{Binding ActorName}" Margin="10"/>
+                            <Label Text="{Binding ActorSurName}" Margin="10"/>
+                            <Label Text="{Binding ActorGender}" Margin="10"/>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+        <Button x:Name="Add" Text="ADD" Clicked="Add_Clicked"/>
+        <Button x:Name="Show" Text="SHOW" Clicked="Show_Clicked"/>
+
+        <ListView x:Name="MovieActorList"  HasUnevenRows="True">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="{Binding MovieActorID}" Margin="10"/>
+                            <Label Text="{Binding MovieID}" Margin="10"/>
+                            <Label Text="{Binding MovieName}" Margin="10"/>
+                            <Label Text="{Binding ActorID}" Margin="10"/>
+                            <Label Text="{Binding ActorName}" Margin="10"/>
+                            <Label Text="{Binding ActorSurName}" Margin="10"/>
+                            <Button Text="DELETE" BindingContext="{Binding MovieActorID}"
+                                                        Clicked="Delete_Clicked" BackgroundColor="LightBlue" TextColor="Black"/>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+    </StackLayout>
+</ContentPage>

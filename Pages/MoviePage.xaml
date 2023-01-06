@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="_180201028_yagmurkaya_cproject.MoviePage"
+            Title="Movie's List" Appearing="ContentPage_Appearing"
+             BackgroundColor="LightGray">
+    <StackLayout Orientation="Vertical">
+        <Entry x:Name="MovieName"/>
+        <Entry x:Name="movieruntime"/>
+
+        <ListView x:Name="PlaceList" ItemTapped="PlaceList_ItemTapped_1" HasUnevenRows="True">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="{Binding PlaceID}" Margin="10"/>
+                            <Label Text="{Binding PlaceName}" Margin="10"/>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+        <Button x:Name="Add" Text="ADD" Clicked="Add_Clicked"/>
+        <Button x:Name="Show" Text="SHOW" Clicked="Show_Clicked"/>
+
+
+        <ListView x:Name="MovieList" HasUnevenRows="True">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="{Binding MovieID}" Margin="10"/>
+                            <Label Text="{Binding MovieName}" Margin="10"/>
+                            <Label Text="{Binding MovieRunTime}" Margin="10"/>
+                            <Label Text="{Binding PlaceID}" Margin="10"/>
+                            <Label Text="{Binding PlaceName}" Margin="10"/>
+                            <Button Text="DELETE" BindingContext="{Binding MovieID}"
+                                                        Clicked="Delete_Clicked" BackgroundColor="LightBlue" TextColor="Black"/>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+    </StackLayout>
+</ContentPage>

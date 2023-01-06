@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="_180201028_yagmurkaya_cproject.MainPage"
+ Title="Home"
+             BackgroundColor="DarkGrey">
+    <ScrollView>
+        <StackLayout Orientation="Vertical" 
+                     VerticalOptions="Center" 
+                     HorizontalOptions="Center">
+
+            <Label Text="MOVIE DATABASE" 
+                   FontSize="51" 
+                   TextColor= "Purple" 
+                   VerticalTextAlignment="Center" 
+                   VerticalOptions="Center"/>
+
+            <HorizontalStackLayout>
+
+                <VerticalStackLayout VerticalOptions="Center">
+
+                    <Label Text="Student Name:" FontSize="Subtitle" TextColor="Black"  Margin="10"/>
+                    <Label Text="Student ID:" FontSize="Subtitle" TextColor="Black" Margin="10"/>
+                </VerticalStackLayout>
+
+                <VerticalStackLayout VerticalOptions="Center">
+
+                    <Label Text="YAĞMUR KAYA" FontSize="Subtitle" TextColor="Black"  Margin="10"/>
+                    <Label Text="180201028" FontSize="Subtitle" TextColor="Black" Margin="10"/>
+                </VerticalStackLayout>
+
+            </HorizontalStackLayout>
+
+
+
+
+        </StackLayout>
+
+    </ScrollView>
+
+</ContentPage>

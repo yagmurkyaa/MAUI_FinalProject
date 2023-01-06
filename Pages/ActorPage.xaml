@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="_180201028_yagmurkaya_cproject.ActorPage"
+            Title="Actor's List"
+             BackgroundColor="LightGray">
+    <StackLayout Orientation="Vertical">
+        <Entry x:Name="ActorName"/>
+        <Entry x:Name="ActorSurName"/>
+        <RadioButton Content="Male"
+                                     FontSize="Subtitle"
+                                     TextColor="Black"
+                                     CheckedChanged="RadioButton_CheckedChanged"/>
+        <RadioButton Content="Female"
+                                     FontSize="Subtitle"
+                                     TextColor="Black"
+                                     CheckedChanged="RadioButton_CheckedChanged"/>
+
+        <Button x:Name="Add" Text="ADD" Clicked="Add_Clicked"/>
+        <Button x:Name="Show" Text="SHOW" Clicked="Show_Clicked"/>
+
+        <ListView x:Name="ActorList" HasUnevenRows="True">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="{Binding ActorID}" Margin="10"/>
+                            <Label Text="{Binding ActorName}" Margin="10"/>
+                            <Label Text="{Binding ActorSurName}" Margin="10"/>
+                            <Label Text="{Binding ActorGender}" Margin="10"/>
+                            <Button Text="DELETE" BindingContext="{Binding ActorID}"
+                                                        Clicked="Delete_Clicked" BackgroundColor="LightBlue" TextColor="Black"/>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+    </StackLayout>
+</ContentPage>

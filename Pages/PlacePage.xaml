@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="_180201028_yagmurkaya_cproject.PlacePage"
+             Title="Places"
+             BackgroundColor="LightGray">
+    <VerticalStackLayout>
+        <StackLayout Orientation="Vertical">
+            <Entry x:Name="PlaceName"/>
+
+            <Button x:Name="Add" Text="ADD" Clicked="Add_Clicked"/>
+            <Button x:Name="Show" Text="SHOW" Clicked="Show_Clicked"/>
+
+            <ListView x:Name="PlaceList" HasUnevenRows="True">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal">
+                                <Label Text="{Binding PlaceID}" Margin="10"/>
+                                <Label Text="{Binding PlaceName}" Margin="10"/>
+                                <Button Text="DELETE" BindingContext="{Binding PlaceID}"
+                                                        Clicked="Delete_Clicked" BackgroundColor="LightBlue" TextColor="Black"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+        </StackLayout>
+    </VerticalStackLayout>
+</ContentPage>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="_180201028_yagmurkaya_cproject.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:_180201028_yagmurkaya_cproject"
+    Shell.FlyoutBehavior="Disabled">
+
+    <TabBar>
+        <Tab Title="HomePage" Icon="homee.png">
+            <ShellContent ContentTemplate="{DataTemplate local:MainPage}" Route="MainPage"/>
+        </Tab>
+
+        <Tab Title="Movies" Icon="movie.png">
+            <ShellContent ContentTemplate="{DataTemplate local:MoviePage}" Route="MoviePage"/>
+        </Tab>
+
+        <Tab Title="Actors" Icon="actor.png">
+            <ShellContent ContentTemplate="{DataTemplate local:ActorPage}" Route="ActorPage"/>
+        </Tab>
+
+        <Tab Title="Movies and Actors" Icon="movieactor.png">
+            <ShellContent ContentTemplate="{DataTemplate local:MovieActorPage}" Route="MovieActorPage"/>
+        </Tab>
+
+        <Tab Title="Places" Icon="place.png">
+            <ShellContent ContentTemplate="{DataTemplate local:PlacePage}" Route="PlacePage"/>
+        </Tab>
+    </TabBar>
+
+</Shell>
